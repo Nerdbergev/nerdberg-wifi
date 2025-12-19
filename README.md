@@ -3,7 +3,7 @@
 ## Applying the config
 
 List all APs in `roster.txt` and run `./deploy.sh`.
-Ensure that you got the `secret_vars` file somewhere.
+Ensure that you got the `secret_vars` file somewhere (e.g. vaultvarden).
 It will ensure expansion of the variables in the config.
 The folders `etc` and `root` will be copied onto the devices.
 Then the script at `root/install.sh` will be executed on each device.
