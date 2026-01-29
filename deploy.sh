@@ -11,9 +11,21 @@ if [ -e secret_vars ] ; then
 	done
 fi
 
-cat roster.txt | while read line ; do
+filter="$1"
+roster="$(cat roster.txt)"
+if [ -n "$filter" ] ; then
+	roster="$(echo "$roster" | grep "$filter")"
+fi
+
+echo "$roster" | while read line ; do
+    if echo "$line" | grep -q "^#" ; then
+		continue
+	fi
 	ip=$(echo "$line" | cut -d' ' -f1)
 	hostname=$(echo "$line" | cut -d' ' -f2)
+	if [ -z "$ip" ] || [ -z "$hostname" ] ; then
+		continue
+	fi
 	echo "Deploying IP: $ip; HOST: $hostname"
 	scp -Or $tmpdir/* "root@$ip:/"
 	ssh -n "root@$ip" /root/install.sh
