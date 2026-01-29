@@ -1,1 +1,4 @@
-10.131.1.26 ap-werkstatt
+10.73.37.37 ap-lounge
+10.73.37.38 ap-eingang
+10.73.37.39 ap-werkstatt
+10.73.37.40 ap-hinterzimmer
