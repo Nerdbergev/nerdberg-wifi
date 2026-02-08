@@ -18,3 +18,19 @@ config interface 'lan'
 	option device 'br-lan'
 	option proto 'dhcp'
 
+config device
+	option type '8021q'
+	option ifname 'br-lan'
+	option vid '42'
+	option name 'br-lan.42'
+
+config device
+	option type 'bridge'
+	option name 'br-freifunk'
+	list ports 'br-lan.42'
+	option bridge_empty '1'
+
+config interface 'freifunk'
+	option proto 'none'
+	option device 'br-freifunk'
+
