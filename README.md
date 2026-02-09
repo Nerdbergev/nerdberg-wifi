@@ -1,5 +1,5 @@
 > [!CAUTION]
-> Migrated to https://git.nerdberg.de/Nerdberg/Satzung
+> Migrated to https://git.nerdberg.de/Nerdberg/nerdberg-wifi
 
 # Nerdberg WIFI AP config
 
